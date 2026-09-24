@@ -1,0 +1,30 @@
+{
+  "name": "LiteLLM Secure Proxy",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "python -m pip install --upgrade pip && pip install 'litellm[proxy]'",
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "LiteLLM Proxy",
+      "onAutoForward": "notify"
+    }
+  },
+  "secrets": {
+    "GROQ_KEY_1": {
+      "description": "First Groq API key for swarm-coder.",
+      "documentationUrl": "https://console.groq.com/keys"
+    },
+    "GROQ_KEY_2": {
+      "description": "Second Groq API key for swarm-coder.",
+      "documentationUrl": "https://console.groq.com/keys"
+    },
+    "GEMINI_KEY_1": {
+      "description": "First Google Gemini API key for swarm-manager.",
+      "documentationUrl": "https://aistudio.google.com/app/apikey"
+    },
+    "GEMINI_KEY_2": {
+      "description": "Second Google Gemini API key for swarm-manager.",
+      "documentationUrl": "https://aistudio.google.com/app/apikey"
+    }
+  }
+}
