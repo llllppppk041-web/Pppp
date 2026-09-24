@@ -2,20 +2,20 @@ model_list:
   - model_name: swarm-coder
     litellm_params:
       model: groq/llama3-70b-8192
-      api_key: GROQ_KEY_1
+      api_key: os.environ/GROQ_KEY_1
   - model_name: swarm-coder
     litellm_params:
       model: groq/llama3-70b-8192
-      api_key: GROQ_KEY_2
+      api_key: os.environ/GROQ_KEY_2
 
   - model_name: swarm-manager
     litellm_params:
       model: gemini/gemini-1.5-pro
-      api_key: GEMINI_KEY_1
+      api_key: os.environ/GEMINI_KEY_1
   - model_name: swarm-manager
     litellm_params:
       model: gemini/gemini-1.5-pro
-      api_key: GEMINI_KEY_2
+      api_key: os.environ/GEMINI_KEY_2
 
 router_settings:
   routing_strategy: usage-based-routing
