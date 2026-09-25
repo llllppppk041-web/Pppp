@@ -128,7 +128,20 @@ model_list:
       api_base: os.environ/CLOUDFLARE_API_BASE
 
 
+  # Cloudflare Workers AI — 3 deployments of each selected route.
   # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+  - model_name: swarm-workers-coder
+    litellm_params:
+      model: cloudflare/@cf/zai-org/glm-4.7-flash
+      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_base: os.environ/CLOUDFLARE_API_BASE
+  - model_name: swarm-workers-coder
+    litellm_params:
+      model: cloudflare/@cf/zai-org/glm-4.7-flash
+      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_base: os.environ/CLOUDFLARE_API_BASE
   - model_name: swarm-workers-coder
     litellm_params:
       model: cloudflare/@cf/zai-org/glm-4.7-flash
@@ -141,11 +154,29 @@ model_list:
       api_base: os.environ/CLOUDFLARE_API_BASE
   - model_name: swarm-workers-coder
     litellm_params:
+      model: cloudflare/@cf/nvidia/nemotron-3-120b
+      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_base: os.environ/CLOUDFLARE_API_BASE
+  - model_name: swarm-workers-coder
+    litellm_params:
+      model: cloudflare/@cf/nvidia/nemotron-3-120b
+      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_base: os.environ/CLOUDFLARE_API_BASE
+  - model_name: swarm-workers-coder
+    litellm_params:
       model: cloudflare/@cf/qwen/qwen3.8-27b
       api_key: os.environ/CLOUDFLARE_API_KEY
       api_base: os.environ/CLOUDFLARE_API_BASE
-
-
+  - model_name: swarm-workers-coder
+    litellm_params:
+      model: cloudflare/@cf/qwen/qwen3.8-27b
+      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_base: os.environ/CLOUDFLARE_API_BASE
+  - model_name: swarm-workers-coder
+    litellm_params:
+      model: cloudflare/@cf/qwen/qwen3.8-27b
+      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_base: os.environ/CLOUDFLARE_API_BASE
 router_settings:
   routing_strategy: usage-based-routing
   fallbacks:
