@@ -17,6 +17,38 @@ model_list:
       model: gemini/gemini-1.5-pro
       api_key: os.environ/GEMINI_KEY_2
 
+  # Additional specialist models via OpenRouter.
+  # Set OPENROUTER_API_KEY in Codespaces Secrets before using these.
+  - model_name: swarm-deepseek
+    litellm_params:
+      model: openrouter/deepseek/deepseek-v4-pro-0813
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: swarm-kimi
+    litellm_params:
+      model: openrouter/moonshotai/kimi-k2.6
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: swarm-qwen
+    litellm_params:
+      model: openrouter/qwen/qwen3.5-397b-a17b
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: swarm-glm53
+    litellm_params:
+      model: openrouter/z-ai/glm-5.3
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: swarm-glm52
+    litellm_params:
+      model: openrouter/z-ai/glm-5.2
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: swarm-minimax
+    litellm_params:
+      model: openrouter/minimax/minimax-m3
+      api_key: os.environ/OPENROUTER_API_KEY
+
 router_settings:
   routing_strategy: usage-based-routing
   fallbacks:
