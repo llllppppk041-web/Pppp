@@ -97,6 +97,37 @@ model_list:
       model: openrouter/minimax/minimax-m3
       api_key: os.environ/OPENROUTER_API_KEY
 
+  # Cerebras — ultra-fast inference. Requires CEREBRAS_API_KEY.
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/gpt-oss-120b
+      api_key: os.environ/CEREBRAS_API_KEY
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/qwen-3-235b-a22b-instruct-2507
+      api_key: os.environ/CEREBRAS_API_KEY
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/qwen-3-235b-a22b-thinking-2507
+      api_key: os.environ/CEREBRAS_API_KEY
+
+  # Additional free-tier provider routes.
+  # Add the corresponding secret before using each provider.
+  - model_name: swarm-mistral
+    litellm_params:
+      model: mistral/mistral-small-latest
+      api_key: os.environ/MISTRAL_API_KEY
+  - model_name: swarm-cohere
+    litellm_params:
+      model: cohere/command-a-03-2025
+      api_key: os.environ/COHERE_API_KEY
+  - model_name: swarm-cloudflare
+    litellm_params:
+      model: cloudflare/@cf/openai/gpt-oss-120b
+      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_base: os.environ/CLOUDFLARE_API_BASE
+
+
 router_settings:
   routing_strategy: usage-based-routing
   fallbacks:
