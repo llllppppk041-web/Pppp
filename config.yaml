@@ -1,32 +1,43 @@
-model_list:
   - model_name: swarm-coder
     litellm_params:
       model: groq/llama3-70b-8192
       api_key: os.environ/GROQ_KEY_1
+
   - model_name: swarm-coder
     litellm_params:
       model: groq/llama3-70b-8192
       api_key: os.environ/GROQ_KEY_2
 
+  - model_name: swarm-coder
+    litellm_params:
+      model: groq/llama3-70b-8192
+      api_key: os.environ/GROQ_KEY_3
+
   - model_name: swarm-manager
     litellm_params:
       model: gemini/gemini-1.5-pro
       api_key: os.environ/GEMINI_KEY_1
+
   - model_name: swarm-manager
     litellm_params:
       model: gemini/gemini-1.5-pro
       api_key: os.environ/GEMINI_KEY_2
 
-  # Three deployments of each specialist route.
-  # All six specialists use the secure OPENROUTER_API_KEY secret.
+  - model_name: swarm-manager
+    litellm_params:
+      model: gemini/gemini-1.5-pro
+      api_key: os.environ/GEMINI_KEY_3
+
   - model_name: swarm-deepseek
     litellm_params:
       model: openrouter/deepseek/deepseek-v4-pro-0813
       api_key: os.environ/OPENROUTER_API_KEY_1
+
   - model_name: swarm-deepseek
     litellm_params:
       model: openrouter/deepseek/deepseek-v4-pro-0813
       api_key: os.environ/OPENROUTER_API_KEY_2
+
   - model_name: swarm-deepseek
     litellm_params:
       model: openrouter/deepseek/deepseek-v4-pro-0813
@@ -36,10 +47,12 @@ model_list:
     litellm_params:
       model: openrouter/moonshotai/kimi-k2.6
       api_key: os.environ/OPENROUTER_API_KEY_1
+
   - model_name: swarm-kimi
     litellm_params:
       model: openrouter/moonshotai/kimi-k2.6
       api_key: os.environ/OPENROUTER_API_KEY_2
+
   - model_name: swarm-kimi
     litellm_params:
       model: openrouter/moonshotai/kimi-k2.6
@@ -49,10 +62,12 @@ model_list:
     litellm_params:
       model: openrouter/qwen/qwen3.5-397b-a17b
       api_key: os.environ/OPENROUTER_API_KEY_1
+
   - model_name: swarm-qwen
     litellm_params:
       model: openrouter/qwen/qwen3.5-397b-a17b
       api_key: os.environ/OPENROUTER_API_KEY_2
+
   - model_name: swarm-qwen
     litellm_params:
       model: openrouter/qwen/qwen3.5-397b-a17b
@@ -62,10 +77,12 @@ model_list:
     litellm_params:
       model: openrouter/z-ai/glm-5.3
       api_key: os.environ/OPENROUTER_API_KEY_1
+
   - model_name: swarm-glm53
     litellm_params:
       model: openrouter/z-ai/glm-5.3
       api_key: os.environ/OPENROUTER_API_KEY_2
+
   - model_name: swarm-glm53
     litellm_params:
       model: openrouter/z-ai/glm-5.3
@@ -75,10 +92,12 @@ model_list:
     litellm_params:
       model: openrouter/z-ai/glm-5.2
       api_key: os.environ/OPENROUTER_API_KEY_1
+
   - model_name: swarm-glm52
     litellm_params:
       model: openrouter/z-ai/glm-5.2
       api_key: os.environ/OPENROUTER_API_KEY_2
+
   - model_name: swarm-glm52
     litellm_params:
       model: openrouter/z-ai/glm-5.2
@@ -88,43 +107,105 @@ model_list:
     litellm_params:
       model: openrouter/minimax/minimax-m3
       api_key: os.environ/OPENROUTER_API_KEY_1
+
   - model_name: swarm-minimax
     litellm_params:
       model: openrouter/minimax/minimax-m3
       api_key: os.environ/OPENROUTER_API_KEY_2
+
   - model_name: swarm-minimax
     litellm_params:
       model: openrouter/minimax/minimax-m3
       api_key: os.environ/OPENROUTER_API_KEY_3
 
-  # Cerebras — ultra-fast inference. Requires CEREBRAS_API_KEY.
   - model_name: swarm-cerebras
     litellm_params:
       model: cerebras/gpt-oss-120b
-      api_key: os.environ/CEREBRAS_API_KEY
+      api_key: os.environ/CEREBRAS_API_KEY_1
+
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/gpt-oss-120b
+      api_key: os.environ/CEREBRAS_API_KEY_2
+
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/gpt-oss-120b
+      api_key: os.environ/CEREBRAS_API_KEY_3
+
   - model_name: swarm-cerebras
     litellm_params:
       model: cerebras/qwen-3-235b-a22b-instruct-2507
-      api_key: os.environ/CEREBRAS_API_KEY
+      api_key: os.environ/CEREBRAS_API_KEY_1
+
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/qwen-3-235b-a22b-instruct-2507
+      api_key: os.environ/CEREBRAS_API_KEY_2
+
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/qwen-3-235b-a22b-instruct-2507
+      api_key: os.environ/CEREBRAS_API_KEY_3
+
   - model_name: swarm-cerebras
     litellm_params:
       model: cerebras/qwen-3-235b-a22b-thinking-2507
-      api_key: os.environ/CEREBRAS_API_KEY
+      api_key: os.environ/CEREBRAS_API_KEY_1
 
   # Additional free-tier provider routes.
   # Add the corresponding secret before using each provider.
+
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/qwen-3-235b-a22b-thinking-2507
+      api_key: os.environ/CEREBRAS_API_KEY_2
+
+  # Additional free-tier provider routes.
+  # Add the corresponding secret before using each provider.
+
+  - model_name: swarm-cerebras
+    litellm_params:
+      model: cerebras/qwen-3-235b-a22b-thinking-2507
+      api_key: os.environ/CEREBRAS_API_KEY_3
+
+  # Additional free-tier provider routes.
+  # Add the corresponding secret before using each provider.
+
   - model_name: swarm-mistral
     litellm_params:
       model: mistral/mistral-small-latest
-      api_key: os.environ/MISTRAL_API_KEY
+      api_key: os.environ/MISTRAL_API_KEY_1
+
+  - model_name: swarm-mistral
+    litellm_params:
+      model: mistral/mistral-small-latest
+      api_key: os.environ/MISTRAL_API_KEY_2
+
+  - model_name: swarm-mistral
+    litellm_params:
+      model: mistral/mistral-small-latest
+      api_key: os.environ/MISTRAL_API_KEY_3
+
   - model_name: swarm-cohere
     litellm_params:
       model: cohere/command-a-03-2025
-      api_key: os.environ/COHERE_API_KEY
+      api_key: os.environ/COHERE_API_KEY_1
+
+  - model_name: swarm-cohere
+    litellm_params:
+      model: cohere/command-a-03-2025
+      api_key: os.environ/COHERE_API_KEY_2
+
+  - model_name: swarm-cohere
+    litellm_params:
+      model: cohere/command-a-03-2025
+      api_key: os.environ/COHERE_API_KEY_3
+
   - model_name: swarm-cloudflare
     litellm_params:
       model: cloudflare/@cf/openai/gpt-oss-120b
-      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_key: os.environ/CLOUDFLARE_API_KEY_1
       api_base: os.environ/CLOUDFLARE_API_BASE
 
 
@@ -132,51 +213,49 @@ model_list:
   # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
   # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
   # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+
+  - model_name: swarm-cloudflare
+    litellm_params:
+      model: cloudflare/@cf/openai/gpt-oss-120b
+      api_key: os.environ/CLOUDFLARE_API_KEY_2
+      api_base: os.environ/CLOUDFLARE_API_BASE
+
+
+  # Cloudflare Workers AI — 3 deployments of each selected route.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+
+  - model_name: swarm-cloudflare
+    litellm_params:
+      model: cloudflare/@cf/openai/gpt-oss-120b
+      api_key: os.environ/CLOUDFLARE_API_KEY_3
+      api_base: os.environ/CLOUDFLARE_API_BASE
+
+
+  # Cloudflare Workers AI — 3 deployments of each selected route.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+  # Cloudflare Workers AI — current free-plan-capable coding/reasoning routes.
+
   - model_name: swarm-workers-coder
     litellm_params:
       model: cloudflare/@cf/zai-org/glm-4.7-flash
-      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_key: os.environ/CLOUDFLARE_API_KEY_1
       api_base: os.environ/CLOUDFLARE_API_BASE
+
   - model_name: swarm-workers-coder
     litellm_params:
       model: cloudflare/@cf/zai-org/glm-4.7-flash
-      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_key: os.environ/CLOUDFLARE_API_KEY_2
       api_base: os.environ/CLOUDFLARE_API_BASE
+
   - model_name: swarm-workers-coder
     litellm_params:
       model: cloudflare/@cf/zai-org/glm-4.7-flash
-      api_key: os.environ/CLOUDFLARE_API_KEY
+      api_key: os.environ/CLOUDFLARE_API_KEY_3
       api_base: os.environ/CLOUDFLARE_API_BASE
-  - model_name: swarm-workers-coder
-    litellm_params:
-      model: cloudflare/@cf/nvidia/nemotron-3-120b
-      api_key: os.environ/CLOUDFLARE_API_KEY
-      api_base: os.environ/CLOUDFLARE_API_BASE
-  - model_name: swarm-workers-coder
-    litellm_params:
-      model: cloudflare/@cf/nvidia/nemotron-3-120b
-      api_key: os.environ/CLOUDFLARE_API_KEY
-      api_base: os.environ/CLOUDFLARE_API_BASE
-  - model_name: swarm-workers-coder
-    litellm_params:
-      model: cloudflare/@cf/nvidia/nemotron-3-120b
-      api_key: os.environ/CLOUDFLARE_API_KEY
-      api_base: os.environ/CLOUDFLARE_API_BASE
-  - model_name: swarm-workers-coder
-    litellm_params:
-      model: cloudflare/@cf/qwen/qwen3.8-27b
-      api_key: os.environ/CLOUDFLARE_API_KEY
-      api_base: os.environ/CLOUDFLARE_API_BASE
-  - model_name: swarm-workers-coder
-    litellm_params:
-      model: cloudflare/@cf/qwen/qwen3.8-27b
-      api_key: os.environ/CLOUDFLARE_API_KEY
-      api_base: os.environ/CLOUDFLARE_API_BASE
-  - model_name: swarm-workers-coder
-    litellm_params:
-      model: cloudflare/@cf/qwen/qwen3.8-27b
-      api_key: os.environ/CLOUDFLARE_API_KEY
-      api_base: os.environ/CLOUDFLARE_API_BASE
+
 router_settings:
   routing_strategy: usage-based-routing
   fallbacks:
